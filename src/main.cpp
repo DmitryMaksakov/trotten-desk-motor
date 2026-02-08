@@ -2,8 +2,8 @@
   ESP32 + BTS7960 + VL53L1X
 
   Buttons (INPUT_PULLUP, active LOW):
-    UP     = GPIO 14
-    DOWN   = GPIO 27
+    UP     = GPIO 27
+    DOWN   = GPIO 14
     PRESET = GPIO 26
 
   Motor driver (BTS7960):
