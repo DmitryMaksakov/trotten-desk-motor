@@ -14,20 +14,21 @@ ESP32 firmware to control an IKEA Trotten desk motor using a BTS7960 driver and 
 - 3 push buttons (active‑LOW, using internal pull‑ups)
 
 ## Wiring
-### Buttons (INPUT_PULLUP, active LOW)
-- UP: GPIO 27
-- DOWN: GPIO 14
-- PRESET: GPIO 26
+====================== ESP32 ======================
 
-### Motor driver (BTS7960)
-- R_EN: GPIO 18
-- L_EN: GPIO 19
-- RPWM: GPIO 32
-- LPWM: GPIO 33
+        GPIO21  -------------------- SDA  VL53L1X
+        GPIO22  -------------------- SCL  VL53L1X
 
-### I2C (VL53L1X)
-- SDA: GPIO 21
-- SCL: GPIO 22
+        GPIO18  -------------------- R_EN  BTS7960
+        GPIO19  -------------------- L_EN  BTS7960
+        GPIO32  -------------------- RPWM  BTS7960
+        GPIO33  -------------------- LPWM  BTS7960
+
+        GPIO27  ----[   BUTTON UP   ]--.
+        GPIO14  ----[  BUTTON DOWN  ]--+---- (shorted to GND when pressed)
+        GPIO26  ----[ BUTTON PRESET ]--'
+
+====================================================
 
 ## Behavior
 - Holding DOWN moves the desk down; holding UP moves it up.
